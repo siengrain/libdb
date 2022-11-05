@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Home{% endblock %}</title>
+
+{% block content %}
+<div class="bcon">
+	<h1>Reading List</h1>
+	<a class="btn btn-outline-light" href="/new">+</a>
+	<br />
+	<a class="btn btn-dark" href="/history">History</a>
+	<ul>
+		{% for book in books %}
+		<a href="{{ url_for('app.update', id=book['id']) }}"><li class="books">
+			<div class="card mb-3">
+			  <div class="row g-0">
+			    <div class="col-md-4">
+				    <img src="{{ url_for('static', filename='book-cover-1.png') }}" class="img-fluid rounded-start" alt="...">
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+				      <h5 class="card-title">{{ book['book'] }} by {{ book['author'] }}</h5>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</li>
+		</a>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}
+	
+
+

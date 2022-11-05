@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Log In{% endblock %}</title>
+
+{% block content %}
+<div class="reglog">
+        <h1>Log In</h1>
+        <form method="post" autocomplete="off">
+                <div class="regbox">
+                        <label for="username">Username:</label>
+                        <input name="username" id="username" required>
+                        <br />
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required>
+                        <br />
+                        <div class="butn btn">
+                                <input class="btn btn-outline-light" style="height:40px; width:100px" type="submit" value="Log In">
+                        </div>
+        </form>
+</div>
+{% endblock %}

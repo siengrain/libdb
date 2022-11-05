@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Welcome{% endblock%}</title>
+
+{% block content %}
+<section class="section-first">
+       <h1>Libdb <img class="img" src="{{ url_for('static', filename='logo.png') }}"></h1>
+       <p>An easy way to manage your to-read list!</p>
+</section>
+<section class="section-second">
+       <div class="center">
+       	<h1>Remember...</h1>
+       	<div class="left">
+       		<h2>The books you've read</h2>
+       	</div>
+       	<div class="right">	
+       		<h2>The books you have to read</h2>
+       	</div>
+       	<h1>Easily with this app!</h1>
+       </div>
+</section>
+{% endblock%}

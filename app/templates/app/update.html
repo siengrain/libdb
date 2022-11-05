@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+<title>{% block title %}Update{% endblock %}</title>
+{% block content %}
+<div class="create">
+        <h1>Update book</h1>
+        <form method="post">
+                <label for="book">Book:  </label>
+		<input value="{{ book['book'] }}" name="book" maxlength="50" id="book" required>
+                <br />
+                <label for="author">Author:</label>
+		<input value="{{ book['author'] }}" name="author" maxlength="50" id="author" required>
+                <br />
+		<label id="com" for="completed">Completed</label>
+                <input type="checkbox" name="completed" id="completed" {% if book['completed'] == 1 %}checked{% endif %}>
+		<br />
+                <div class="sub">
+			<a class="btn btn-outline-dark" href="{{ url_for('app.index') }}">Back</a>
+                        <input class="btn btn-outline-light" type="submit" value="Save">
+                <br />
+                </div>
+        </form>
+        <form action="{{ url_for('app.delete', id=book['id']) }}" method="post">
+                <input class="btn btn-outline-danger" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this to-do?')">
+        </form>
+</div>
+{% endblock %}

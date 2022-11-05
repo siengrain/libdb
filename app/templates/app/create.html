@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Add book{% endblock %}</title>
+
+{% block content %}
+<div class="create">
+	<h1>Add a book to the readlist</h1>
+        <form method="post">
+                <label for="book">Book:  </label>
+                <input name="book" maxlength="50" id="book" required>
+                <br />
+		<label for="author">Author:</label>
+		<input name="author" maxlength="50" id="author" required>
+		<br />
+                <a class="btn btn-outline-dark" href="{{ url_for('app.index') }}">Back</a>
+                <div class="sub">
+                        <input class="btn btn-outline-light" type="submit" value="Save">
+                <br />
+                </div>
+        </form>
+</div>
+{% endblock %}

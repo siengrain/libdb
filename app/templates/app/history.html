@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}History{% endblock %}</title>
+
+{% block content %}
+<div class="bcon">
+        <h1>Finished Books</h1>
+        <br />
+        <ul>
+                {% for book in books %}
+		<a href="{{ url_for('app.update', id=book['id'])  }}"<li>
+                        <div class="card mb-3">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                                    <img src="{{ url_for('static', filename='book-cover-2.png') }}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                      <h5 class="card-title">{{ book['book'] }} by {{ book['author'] }}</h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </li>
+                </a>
+                {% endfor %}
+        </ul>
+</div>
+{% endblock %}
